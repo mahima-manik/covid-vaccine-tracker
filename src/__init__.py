@@ -16,7 +16,7 @@ def cowin():
         fees = request.form.get("fees")
         return 'OK'
     if request.method == "GET":
-        varanasi = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=696&date=04-06-2021"
+        varanasi = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=696&date=05-06-2021"
         result = requests.get(varanasi).json()
         processor = Processor(result)
         filtered = processor.filter_vaccine(1, 18)

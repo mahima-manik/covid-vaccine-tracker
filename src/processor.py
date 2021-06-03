@@ -29,6 +29,7 @@ class Processor:
                 dict = {}
                 dict['availability'] = num_doses
                 dict['min_age_limit'] = data['sessions'][0]['min_age_limit']
+                dict['vaccine'] = data['sessions'][0]['vaccine']
                 dict['center_id'] = data['center_id']
                 dict['name'] = data['name']
                 dict['block_name'] = data['block_name']

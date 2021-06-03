@@ -15,6 +15,10 @@
 
 <body>
 <div class="container">
+    <h3>
+        Notify when vaccine is available
+        <small class="text-muted">What are you looking for?</small>
+    </h3>
     <form action="{{ url_for("cowin")}}" method="POST">
         <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
@@ -35,7 +39,7 @@
 
         <div class="form-group">
             <label for="exampleSelect2">Choose vaccine</label>
-            <select multiple class="form-control" name="vaccine">
+            <select class="form-control" name="vaccine">
                 <option>All</option>
                 <option>Covishield</option>
                 <option>Covaxin</option>
@@ -59,6 +63,35 @@
             </select>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
+
+    <div class="container">
+    <h3>
+        Available vaccines around
+        <small class="text-muted">First dose for 18-44 years</small>
+    </h3>
+    <table id="result" class="table table-hover">
+        <thead>
+        <tr>
+            <th>Center ID</th>
+            <th>Name</th>
+            <th>Block Name</th>
+            <th>Availability</th>
+            <th>Vaccine Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for r in result %}
+        <tr>
+            <td>{{ r['center_id'] }}</td>
+            <td>{{ r['name'] }}</td>
+            <td>{{ r['block_name'] }}</td>
+            <td>{{ r['availability'] }}</td>
+            <td>{{ r['vaccine'] }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
 </div>
 </body>
 </html>
