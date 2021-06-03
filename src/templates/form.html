@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="input-group date" data-provide="datepicker">
+        <input type="text" class="form-control">
+        <div class="input-group-addon">
+            <span class="glyphicon glyphicon-th"></span>
+        </div>
+    </div>
+    <table id="result" class="table table-hover">
+        <thead>
+        <tr>
+            <th>Center ID</th>
+            <th>Name</th>
+            <th>Block Name</th>
+            <th>Availability</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for r in result %}
+        <tr>
+            <td>{{ r['center_id'] }}</td>
+            <td>{{ r['name'] }}</td>
+            <td>{{ r['block_name'] }}</td>
+            <td>{{ r['availability'] }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
