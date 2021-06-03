@@ -26,7 +26,7 @@ class Processor:
 
             num_doses = is_vaccine_available(data['sessions'], dose, min_age_limit)
             if num_doses > 0:
-                print(data)
+                dict = {}
                 dict['availability'] = num_doses
                 dict['min_age_limit'] = data['sessions'][0]['min_age_limit']
                 dict['center_id'] = data['center_id']
